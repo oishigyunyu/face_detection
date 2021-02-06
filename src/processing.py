@@ -1,7 +1,7 @@
 import cv2 
 import numpy as np
 
-def detectAndDisplay(frame, mask_img, args):
+def detectAndDisplay(frame, mask_img, args, i):
     face_cascade_name = args.face_cascade
     eyes_cascade_name = args.eyes_cascade
     face_cascade = cv2.CascadeClassifier()
@@ -31,3 +31,4 @@ def detectAndDisplay(frame, mask_img, args):
         faceROI = frame_gray[y:y+h,x:x+w]
         #-- In each face, detect eyes
     cv2.imshow('Capture - Face detection', frame)
+    cv2.imwrite(str(i) + '.png', frame)

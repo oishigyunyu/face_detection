@@ -1,3 +1,4 @@
 venv
 .vscode
 code_workspace
+__pycache__

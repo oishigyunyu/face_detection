@@ -12,13 +12,13 @@ def main(args):
     if not cap.isOpened:
         print('--(!)Error opening video capture')
         exit(0)
-    while True:
+    for i in range(1000):
         mask_img = cv2.imread(args.mask_img,)
         ret, frame = cap.read()
         if frame is None:
             print('--(!) No captured frame -- Break!')
             break
-        detectAndDisplay(frame, mask_img, args)
+        detectAndDisplay(frame, mask_img, args, i)
         if cv2.waitKey(10) == 27:
             break
 
